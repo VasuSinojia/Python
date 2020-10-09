@@ -1,0 +1,105 @@
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+def take(k):
+    if k == 1:
+        a=int(input("Enter 1 for exercise and 2 For food"))
+        if a == 1:
+            exe = input("Write: ")
+            with open("nikExe.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+exe+"\n")
+                print("Done!")
+        elif a == 2:
+            food = input("Write: ")
+            with open("nikFood.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+food+"\n")
+                print("Done!")
+        else:
+            print("Sorry Invalid option")
+    if k == 2:
+        b = int(input("Enter 1 for exercise and 2 For food"))
+        if b == 1:
+            exe = input("Write: ")
+            with open("vasuExe.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+exe+"\n")
+                print("Done!")
+        elif b == 2:
+            food = input("Write: ")
+            with open("vasuFood.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+food+"\n")
+                print("Done!")
+        else:
+            print("Sorry Invalid option")
+    if k == 3:
+        c = int(input("Enter 1 for exercise and 2 For food"))
+        if c == 1:
+            exe = input("Write: ")
+            with open("mihirExe.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+exe+"\n")
+                print("Done!")
+        elif c == 2:
+            food = input("Write: ")
+            with open("mihirFood.txt", "a") as f:
+                f.write(str([str(getdate())])+": "+food+"\n")
+                print("Done!")
+        else:
+            print("Sorry Invalid option")
+def retrieve(n):
+    if n == 1:
+        a = int(input("Enter 1 for exercise and 2 For food"))
+        if a == 1:
+            with open("nikExe.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        elif a == 2:
+            with open("nikFood.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        else:
+            print("Sorry Invalid option")
+    if n == 2:
+        b = int(input("Enter 1 for exercise and 2 For food"))
+        if b == 1:
+            with open("vasuExe.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        elif b == 2:
+            with open("vasuFood.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        else:
+            print("Sorry Invalid option")
+    if n == 3:
+        c = int(input("Enter 1 for exercise and 2 For food"))
+        if c == 1:
+            with open("mihirExe.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        elif c == 2:
+            food = input("Write: ")
+            with open("mihirFood.txt", "r+") as f:
+                for i in f:
+                    print(i, end="")
+        else:
+            print("Sorry Invalid option")
+def client():
+    print("We have 3 Clients")
+    print("\t1. Nikunj"
+          "\t2. Vasu"
+          "\t3. Mihir")
+
+
+print("\n\tHealth management system")
+# choice = int(input("Enter the number of client"))
+# take(choice)
+print("1.Take\n2.Retrieve")
+print("What you want to do?")
+opt = int(input())
+if opt == 1:
+    client()
+    clit = int(input("For Which client?\nEnter number of client:"))
+    take(clit)
+elif opt==2:
+    client()
+    clit = int(input("For Which client?\nEnter number of client:"))
+    retrieve(clit)
